@@ -9,12 +9,12 @@
 #######
 # SITE SETTINGS
 #
-title: bootstrap5-template
-description: "a basic bootstrap 5 template for Jekyll with GitHub Pages"
-year: 2021
+title: Library QR Code Generator
+description: "generate qr codes with logo and tracking campaigns"
+year: 2022
 author: evan will 
 # add search box to navbar, true/false
-search: true
+search: false
 
 ##########
 # URL VARIABLES [optional!]
@@ -29,7 +29,7 @@ url:
 # baseurl is your github repository's name prefixed with a /
 baseurl:
 # location of code, the full url to your github repository
-source-code: https://github.com/thecdil/bootstrap5-template
+source-code: https://github.com/thecdil/qr-generator
 
 ##########
 # GOOGLE ANALYTICS [optional!]
