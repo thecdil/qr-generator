@@ -11,7 +11,7 @@ function generate_qr_code() {
     var qrLogo = document.getElementById("qrLogo").checked ? "{{ '/assets/img/i-logo.png' | relative_url }}" : false;
     var qrCampaign = document.getElementById("qrCampaign").value;
     var qrMedium = document.getElementById("qrMedium").value ? document.getElementById("qrMedium").value : "qr_code";
-    var qrSource = "spec_qrcode";
+    var qrSource = "lib_qrcode";
     if (qrCampaign) { 
         qrUrl += `?utm_source=${encodeURIComponent(qrSource)}&utm_medium=${encodeURIComponent(qrMedium)}&utm_id=${encodeURIComponent(qrCampaign)}`;
     }
