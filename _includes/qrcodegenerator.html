@@ -1,0 +1,40 @@
+<script src="{{ 'assets/lib/qr-code-styling.js' | relative_url }}"></script>
+<script> 
+
+var qrDiv = document.getElementById("qrDiv");
+var newQR;
+
+function generate_qr_code() {
+    // get values
+    var qrUrl = document.getElementById("qrLink").value;
+    var qrWidth = document.getElementById("qrWidth").value ? parseInt(document.getElementById("qrWidth").value) : 300;
+    var qrLogo = document.getElementById("qrLogo").checked ? "{{ '/assets/img/i-logo.png' | relative_url }}" : false;
+    var qrCampaign = document.getElementById("qrCampaign").value;
+    var qrMedium = document.getElementById("qrMedium").value ? document.getElementById("qrMedium").value : "qr_code";
+    var qrSource = "spec_qrcode";
+    if (qrCampaign) { 
+        qrUrl += `?utm_source=${encodeURIComponent(qrSource)}&utm_medium=${encodeURIComponent(qrMedium)}&utm_id=${encodeURIComponent(qrCampaign)}`;
+    }
+    console.log(qrUrl);
+
+    // generate qr code 
+    newQR = new QRCodeStyling({
+        width: qrWidth,
+        height: qrWidth,
+        type: "svg",
+        data: qrUrl,
+        image: qrLogo
+    });
+    
+    // add button to download qr
+    var downloadBtn = `<div class="text-center m-4 p-3 border rounded">
+        <div id="qrPreview"></div>
+        <button class="btn btn-lg btn-success m-3" onclick="newQR.download({ name: 'qr-code', extension: 'png' });">Download PNG</button>
+        </div>`;
+    qrDiv.innerHTML = downloadBtn;
+    // add svg preview of qr
+    newQR.append(document.getElementById("qrPreview"));
+    
+}
+
+</script>

@@ -1,0 +1,44 @@
+---
+title: Library QR Generator
+layout: page-narrow
+foot: qrcodegenerator.html
+---
+
+<p>Use the form below to configure and generate a QR code.</p>
+
+<form id="qrCodeGeneratorForm" onsubmit="generate_qr_code(); return false;">
+    <label for="qrLink" class="form-label">Link</label>
+    <input type="url" id="qrLink" class="form-control" aria-describedby="qrLinkHelp">
+    <div id="qrLinkHelp" class="form-text mb-4">
+        <strong>Required.</strong> Enter the full URL to the page you want to provide a link to, including the "https://"
+    </div>
+
+    <label for="qrCampaign" class="form-label">Tracking campaign id</label>
+    <input type="text" id="qrCampaign" class="form-control" aria-describedby="qrCampaignHelp">
+    <div id="qrCampaignHelp" class="form-text mb-4">
+        <strong>Optional.</strong> Name / id sent to Google Analytics to record the specific promotion campaign so you can track the scans of this code. e.g. "spec_jazz_exhibit", "spec_kingspud". Only use on links to U of I Library websites!
+    </div>
+
+    <label for="qrMedium" class="form-label">Tracking medium</label>
+    <input type="text" id="qrMedium" class="form-control" aria-describedby="qrMediumHelp">
+    <div id="qrMediumHelp" class="form-text mb-4">
+        <strong>Optional.</strong> Name or id for where you are putting the QR code so that you can track where they scanned it with Google Analytics e.g. "poster", "postcard", "sign". Only use on links to U of I Library websites! Use in conjunction with "Tracking campaign id".
+    </div>
+
+    <label for="qrWidth" class="form-label">Image width</label>
+    <input type="text" id="qrWidth" class="form-control" aria-describedby="qrWidthHelp">
+    <div id="qrWidthHelp" class="form-text mb-4">
+        <strong>Optional.</strong> Width of QR code to generate in pixels. Default is 300.
+    </div>
+    
+    <div class="form-check form-switch mb-4">
+        <input class="form-check-input" type="checkbox" role="switch" id="qrLogo" checked>
+        <label class="form-check-label" for="qrLogo">Include "I" logo</label>
+    </div>
+      
+
+    <button type="submit" class="btn btn-primary">Generate QR Code</button>
+    
+</form>
+
+<div id="qrDiv"></div>
