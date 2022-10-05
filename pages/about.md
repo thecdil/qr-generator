@@ -2,6 +2,7 @@
 title: About QR Generator
 nav: About
 nav_order: 2
+layout: page-narrow
 ---
 
 Library QR Code Generator provides a quick form to generate QR codes for your projects.
