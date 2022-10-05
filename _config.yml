@@ -6,6 +6,9 @@
 #
 #######
 
+# set google campaign source
+campaign_source: lib_qrcode
+
 #######
 # SITE SETTINGS
 #
