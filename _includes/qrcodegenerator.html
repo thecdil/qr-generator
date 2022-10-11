@@ -8,7 +8,7 @@ function generate_qr_code() {
     // get values
     var qrUrl = document.getElementById("qrLink").value;
     var qrWidth = document.getElementById("qrWidth").value ? parseInt(document.getElementById("qrWidth").value) : 500;
-    var qrLogo = document.getElementById("qrLogo").checked ? "{{ '/assets/img/i-logo.png' | relative_url }}" : false;
+    var qrLogo = document.getElementById("qrLogo").value ? "{{ '/assets/img/' | relative_url }}" + document.getElementById("qrLogo").value : false;
     var qrCampaign = document.getElementById("qrCampaign").value;
     var qrMedium = document.getElementById("qrMedium").value ? document.getElementById("qrMedium").value : "qr_code";
     var qrSource = "{{ site.campaign_source }}";
