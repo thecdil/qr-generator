@@ -8,7 +8,7 @@ foot: qrcodegenerator.html
 
 <form id="qrCodeGeneratorForm" onsubmit="generate_qr_code(); return false;">
     <label for="qrLink" class="form-label">Link</label>
-    <input type="url" id="qrLink" class="form-control" aria-describedby="qrLinkHelp">
+    <input type="url" id="qrLink" class="form-control" aria-describedby="qrLinkHelp" required>
     <div id="qrLinkHelp" class="form-text mb-4">
         <strong>Required.</strong> Enter the full URL to the page you want to provide a link to, including the "https://"
     </div>
