@@ -7,7 +7,7 @@ var newQR;
 function generate_qr_code() {
     // get values
     var qrUrl = document.getElementById("qrLink").value;
-    var qrWidth = document.getElementById("qrWidth").value ? parseInt(document.getElementById("qrWidth").value) : 300;
+    var qrWidth = document.getElementById("qrWidth").value ? parseInt(document.getElementById("qrWidth").value) : 500;
     var qrLogo = document.getElementById("qrLogo").checked ? "{{ '/assets/img/i-logo.png' | relative_url }}" : false;
     var qrCampaign = document.getElementById("qrCampaign").value;
     var qrMedium = document.getElementById("qrMedium").value ? document.getElementById("qrMedium").value : "qr_code";
@@ -27,7 +27,7 @@ function generate_qr_code() {
     });
     
     // add button to download qr
-    var downloadBtn = `<div class="text-center m-4 p-3 border rounded">
+    var downloadBtn = `<div class="text-center m-4">
         <div id="qrPreview"></div>
         <button class="btn btn-lg btn-success m-3" onclick="newQR.download({ name: 'qr-code', extension: 'png' });">Download PNG</button>
         </div>`;
