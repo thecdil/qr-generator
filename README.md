@@ -1,7 +1,8 @@
 # qr-generator
 
-Simple project to generate branded QR codes for library use. 
+Simple project to generate branded QR codes for library use, powered by the [QR Code Styling](https://github.com/kozakdenys/qr-code-styling) library.
 Optionally adds [Google Analytics campaign utm parameters](https://support.google.com/analytics/answer/10917952) to track use of the QRs.
+See the About page for details of usage.
 
 ## Template Assets
 
