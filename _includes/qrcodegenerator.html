@@ -10,10 +10,11 @@ function generate_qr_code() {
     var qrWidth = document.getElementById("qrWidth").value ? parseInt(document.getElementById("qrWidth").value) : 500;
     var qrLogo = document.getElementById("qrLogo").value ? "{{ '/assets/img/' | relative_url }}" + document.getElementById("qrLogo").value : false;
     var qrCampaign = document.getElementById("qrCampaign").value;
+    var qrSource = document.getElementById("qrSource").value;
     var qrMedium = document.getElementById("qrMedium").value ? document.getElementById("qrMedium").value : "qr_code";
-    var qrSource = "{{ site.campaign_source }}";
+
     if (qrCampaign) { 
-        qrUrl += `?utm_source=${encodeURIComponent(qrSource)}&utm_medium=${encodeURIComponent(qrMedium)}&utm_id=${encodeURIComponent(qrCampaign)}`;
+        qrUrl += `?utm_campaign=${encodeURIComponent(qrCampaign)}&utm_source=${encodeURIComponent(qrSource)}&utm_medium=${encodeURIComponent(qrMedium)}`;
     }
     console.log(qrUrl);
 
@@ -30,6 +31,7 @@ function generate_qr_code() {
     var downloadBtn = `<div class="text-center m-4">
         <div id="qrPreview"></div>
         <button class="btn btn-lg btn-success m-3" onclick="newQR.download({ name: 'qr-code', extension: 'png' });">Download PNG</button>
+        <p class="mt-5"><strong>Link in this QR:</strong><br><code>${qrUrl}</code></p>
         </div>`;
     qrDiv.innerHTML = downloadBtn;
     // add svg preview of qr

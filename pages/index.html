@@ -4,7 +4,7 @@ layout: page-narrow
 foot: qrcodegenerator.html
 ---
 
-<p>Use the form below to configure and generate a QR code.</p>
+<p>Use the form below to configure and generate a QR code. Check the <a href="{{ '/about.html' | relative_url }}">About page</a> more tips and more information about Analytics usage.</p>
 
 <form id="qrCodeGeneratorForm" onsubmit="generate_qr_code(); return false;">
     <label for="qrLink" class="form-label">Link</label>
@@ -13,22 +13,28 @@ foot: qrcodegenerator.html
         <strong>Required.</strong> Enter the full URL to the page you want to provide a link to, including the "https://"
     </div>
 
-    <label for="qrCampaign" class="form-label">Tracking campaign id</label>
+    <label for="qrCampaign" class="form-label">Campaign (utm_campaign)</label>
     <input type="text" id="qrCampaign" class="form-control" aria-describedby="qrCampaignHelp">
     <div id="qrCampaignHelp" class="form-text mb-4">
-        <strong>Optional.</strong> Name / id sent to Google Analytics to record the specific promotion campaign so you can track the scans of this code. e.g. "spec_jazz_exhibit", "spec_kingspud". Only use on links to U of I Library websites!
+        <strong>Optional.</strong> The name of the overall marketing campaign (that might have several different sources or mediums). Use a unique and identifiable name as this will be what we see in Analytics stats. E.g. "spec_jazz_2023", "spec_kingspud", "leganto_launch_2021". Only use on links to U of I Library websites!
     </div>
 
-    <label for="qrMedium" class="form-label">Tracking medium</label>
+    <label for="qrSource" class="form-label">Source (utm_source)</label>
+    <input type="text" id="qrSource" class="form-control" aria-describedby="qrSourceHelp">
+    <div id="qrSourceHelp" class="form-text mb-4">
+        <strong>Optional.</strong> The specific referrer that is sending the traffic to the page, identifying the specific item where you are putting the QR code. E.g. "lib-brochure2023", "fye-handout-1", "mill-sticker1". Only use on links to U of I Library websites! Use in conjunction with "Campaign" option.
+    </div>
+
+    <label for="qrMedium" class="form-label">Medium (utm_medium)</label>
     <input type="text" id="qrMedium" class="form-control" aria-describedby="qrMediumHelp">
     <div id="qrMediumHelp" class="form-text mb-4">
-        <strong>Optional.</strong> Name or id for where you are putting the QR code so that you can track where they scanned it with Google Analytics e.g. "poster", "postcard", "sign". Only use on links to U of I Library websites! Use in conjunction with "Tracking campaign id".
+        <strong>Optional.</strong> The general marketing medium of the Source where you are putting the QR code. E.g. "email", "poster", "bookmark", "sign", or "display". Only use on links to U of I Library websites! Use in conjunction with "Campaign" option.
     </div>
 
     <label for="qrWidth" class="form-label">Image width</label>
     <input type="text" id="qrWidth" class="form-control" aria-describedby="qrWidthHelp">
     <div id="qrWidthHelp" class="form-text mb-4">
-        <strong>Optional.</strong> Width of QR code to generate in pixels. Default is 500.
+        <strong>Optional.</strong> Width of QR code to generate in pixels. Default is 500. Set to a larger number for high res print quality.
     </div>
 
     <label for="qrLogo" class="form-label">Logo option</label>
