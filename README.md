@@ -1,6 +1,7 @@
 # qr-generator
 
-simple project to generate branded QR codes for library use. 
+Simple project to generate branded QR codes for library use. 
+Optionally adds [Google Analytics campaign utm parameters](https://support.google.com/analytics/answer/10917952) to track use of the QRs.
 
 ## Template Assets
 
